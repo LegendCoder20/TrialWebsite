@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Odd Even Finder</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-size: larger;
+    }
+    body {
+      background-color: aqua;
+    }
+    .nav {
+      background-color: black;
+    }
+    .nav a {
+      color: white;
+      padding: 15%;
+      text-decoration: none;
+    }
+  </style>
+  <body>
+    <center>
+      <div class="nav">
+        <a href="/">Home</a>
+        <a href="about.html">About</a>
+      </div>
+      <h1>Even Odd Finder</h1>
+      <br />
+      <br />
+      <br />
+      <form onsubmit="check()">
+        <input type="number" id="num" placeholder="Enter Number" />
+        <br />
+        <br />
+        <input type="submit" value="Check" />
+      </form>
+      <br />
+      <h1 id="ans"></h1>
+    </center>
+  </body>
+  <script>
+    function check() {
+      event.preventDefault();
+      let num = document.getElementById("num");
+      let ans = document.getElementById("ans");
+
+      if (num.value == "") {
+        alert("You Didn't Enter any Value");
+        ans.innerHTML = "";
+        num.focus();
+        return;
+      } else {
+        let n = parseInt(num.value);
+        let r = n % 2 == 0 ? "Even" : "Odd";
+        ans.innerHTML = r;
+      }
+    }
+  </script>
+</html>
